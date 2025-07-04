@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crystalluxe Service</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      position: relative;
+      text-align: center;
+      color: white;
+      padding: 40px 20px 100px;
+    }
+    .slider-container {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      height: 400px;
+      margin: 0 auto 40px;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+    .slider-container img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .after-img {
+      clip-path: inset(0 50% 0 0);
+      transition: clip-path 0.3s ease;
+    }
+    .slider-input {
+      width: 100%;
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+      z-index: 10;
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 2;
+    }
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 20px;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .services, .why-choose {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      flex: 1 1 250px;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #0077cc;
+    }
+    .contact {
+      text-align: center;
+      font-size: 18px;
+    }
+    .contact a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="slider-container">
+      <img src="https://images.unsplash.com/photo-1603383161473-3b01bd0b44a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Before Cleaning">
+      <img src="https://images.unsplash.com/photo-1588776814546-ec7eac9b9115?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" class="after-img" alt="After Cleaning">
+      <input type="range" min="0" max="100" value="50" class="slider-input" id="slider">
+    </div>
+    <h1>Crystalluxe.Service</h1>
+    <p>From filthy to Fresh — in just one Visit.</p>
+  </header>
+  <section>
+    <h2 style="text-align:center;">Our Services</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Home Cleaning</h3>
+        <p>Deep cleaning, surface scrubbing, and sanitization of every room in your home.</p>
+      </div>
+      <div class="card">
+        <h3>Car Detailing</h3>
+        <p>Interior and exterior cleaning, vacuuming, polishing, and restoring that new car feel.</p>
+      </div>
+      <div class="card">
+        <h3>Office Cleaning</h3>
+        <p>Disinfecting workspaces, restocking supplies, and maintaining a professional environment.</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2 style="text-align:center;">Why Choose Us?</h2>
+    <div class="why-choose">
+      <div class="card">
+        <h3>Reliable & Punctual</h3>
+        <p>We show up on time and complete the job with professional excellence.</p>
+      </div>
+      <div class="card">
+        <h3>Eco-Friendly Products</h3>
+        <p>We use non-toxic, safe, and eco-friendly products to protect your family and environment.</p>
+      </div>
+      <div class="card">
+        <h3>Attention to Detail</h3>
+        <p>Every corner and surface is thoroughly cleaned — we don’t cut corners, we clean them!</p>
+      </div>
+    </div>
+  </section>
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p>📞 +32 465 31 45 11</p>
+    <p>📸 Instagram: <a href="https://www.instagram.com/Crystallux.service" target="_blank">@Crystallux.service</a></p>
+  </section>
+  <script>
+    const slider = document.getElementById('slider');
+    const afterImage = document.querySelector('.after-img');
+    slider.addEventListener('input', (e) => {
+      afterImage.style.clipPath = `inset(0 ${100 - e.target.value}% 0 0)`;
+    });
+  </script>
+</body>
+</html>
